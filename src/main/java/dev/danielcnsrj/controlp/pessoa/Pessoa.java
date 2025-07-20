@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pessoa {
-    String cargo;
-    String codigo;
-    String nome;
+    private String cargo;
+    private String codigo;
+    private String nome;
 
     public static Pessoa from(DadosCadastroPessoa dados) {
         return new Pessoa(dados.cargo(), dados.codigo(), dados.nome());
