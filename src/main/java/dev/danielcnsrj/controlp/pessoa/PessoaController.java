@@ -17,7 +17,7 @@ public class PessoaController {
     @PostMapping
     public String cadastrarPessoa(DadosCadastroPessoa dados) {
         System.out.println(dados);
-        return "/";
+        return "pessoa/pessoas";
     }
     
 }
