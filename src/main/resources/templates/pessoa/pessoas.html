@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +27,12 @@
             <th>Código</th>
             <th>Nome</th>
         </tr>
-        <tr>
-            <td>Teste</td>
-            <td>Cod-01</td>
-            <td>Fulano</td>
+        <tr th:each="pessoa : ${pessoas}">
+            <td th:text="${pessoa.cargo}">cargo</td>
+            <td th:text="${pessoa.codigo}">codigo</td>
+            <td th:text="${pessoa.nome}">nome</td>
         </tr>
     </table>
+    <a href="/pessoa/novo">Cadastrar pessoa</a>
 </body>
 </html>
