@@ -1,13 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{template.html}">
     <head>
-        <title>Página inicial de teste</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página inicial</title>
     </head>
     <body>
-        <h1>Conteúdo de teste</h1>
-        <div th:text="${mensagem}">Falha</div>
-        <a href="/pessoa">Lista de pessoas</a>
-        <a href="/pessoa/novo">Cadastrar pessoa</a>
+        <div layout:fragment="conteudo">
+            <div th:text="${mensagem}">Falha</div>
+            <a href="/pessoa">Lista de pessoas</a>
+            <a href="/pessoa/novo">Cadastrar pessoa</a>
+        </div>
     </body>
 </html>
