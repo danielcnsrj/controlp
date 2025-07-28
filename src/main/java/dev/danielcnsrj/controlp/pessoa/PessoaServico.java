@@ -19,4 +19,8 @@ public class PessoaServico {
     public List<Pessoa> listarPessoas(){
         return pessoaRepository.findAll();
     }
+
+    public void excluirPessoa(Integer id) {
+        pessoaRepository.deleteById(id);
+    }
 }

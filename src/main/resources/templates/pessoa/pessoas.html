@@ -22,12 +22,8 @@
             <td th:text="${pessoa.nome}">nome</td>
             <td>
               <form action="/pessoa" method="post">
-                <input type="hidden" name="_method" value="put">
-                <input type="submit" value="Editar">
-              </form>
-
-              <form action="/pessoa" method="post">
                 <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="id" th:value="${pessoa.id}">
                 <input type="submit" value="Excluir">
               </form>
             </td>

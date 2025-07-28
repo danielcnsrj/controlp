@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -15,7 +16,7 @@ public class PessoaController {
         this.pessoaServico = pessoaServico;
     }
 
-    @GetMapping("/novo")
+    @GetMapping("/form")
     public String exibeFormularioDeCadastro() {
         return "pessoa/formulario";
     }
@@ -29,6 +30,12 @@ public class PessoaController {
     @PostMapping
     public String cadastrarPessoa(DadosCadastroPessoa dados) {
         pessoaServico.cadastrarPessoa(Pessoa.from(dados));
+        return "redirect:/pessoa";
+    }
+
+    @DeleteMapping
+    public String excluirPessoa(Integer id){
+        pessoaServico.excluirPessoa(id);
         return "redirect:/pessoa";
     }
     
