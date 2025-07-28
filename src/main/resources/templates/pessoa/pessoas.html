@@ -14,11 +14,23 @@
             <th>Cargo</th>
             <th>Código</th>
             <th>Nome</th>
+            <th>Ações</th>
         </tr>
         <tr th:each="pessoa : ${pessoas}">
             <td th:text="${pessoa.cargo}">cargo</td>
             <td th:text="${pessoa.codigo}">codigo</td>
             <td th:text="${pessoa.nome}">nome</td>
+            <td>
+              <form action="/pessoa" method="post">
+                <input type="hidden" name="_method" value="put">
+                <input type="submit" value="Editar">
+              </form>
+
+              <form action="/pessoa" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Excluir">
+              </form>
+            </td>
         </tr>
     </table>
     <a href="/pessoa/novo">Cadastrar pessoa</a>
