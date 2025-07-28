@@ -23,6 +23,6 @@ public class Pessoa {
     private String nome;
 
     public static Pessoa from(DadosCadastroPessoa dados) {
-        return new Pessoa();//dados.cargo(), dados.codigo(), dados.nome());
+        return new Pessoa(null, dados.cargo(), dados.codigo(), dados.nome());
     }
 }
