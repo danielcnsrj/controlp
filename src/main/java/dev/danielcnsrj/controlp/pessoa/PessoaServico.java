@@ -23,4 +23,8 @@ public class PessoaServico {
     public void excluirPessoa(Integer id) {
         pessoaRepository.deleteById(id);
     }
+
+    public Pessoa buscarPessoaPelo(Integer id) {
+        return pessoaRepository.getReferenceById(id);
+    }
 }
