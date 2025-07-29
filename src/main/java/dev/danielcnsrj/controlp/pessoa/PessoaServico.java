@@ -27,4 +27,11 @@ public class PessoaServico {
     public Pessoa buscarPessoaPelo(Integer id) {
         return pessoaRepository.getReferenceById(id);
     }
+
+    public void alterarPessoa(DadosEdicaoPessoa dados) {
+        Pessoa pessoa = buscarPessoaPelo(dados.id());
+        pessoa.setCargo(dados.cargo());
+        pessoa.setCodigo(dados.codigo());
+        pessoa.setNome(dados.nome());
+    }
 }
