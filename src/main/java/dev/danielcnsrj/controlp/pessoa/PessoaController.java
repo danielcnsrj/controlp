@@ -17,7 +17,11 @@ public class PessoaController {
     }
 
     @GetMapping("/form")
-    public String exibeFormularioDeCadastro() {
+    public String exibeFormularioDeCadastro(Integer id, Model model) {
+        if (id != null){
+            Pessoa pessoa = pessoaServico.buscarPessoaPelo(id);
+            model.addAttribute("pessoa", pessoa);
+        }
         return "pessoa/formulario";
     }
 
@@ -38,5 +42,4 @@ public class PessoaController {
         pessoaServico.excluirPessoa(id);
         return "redirect:/pessoa";
     }
-    
 }
